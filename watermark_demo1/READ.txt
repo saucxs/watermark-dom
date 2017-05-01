@@ -1,0 +1,6 @@
+一，引入watermark.js
+<script type="text/javascript" src="watermark.js"></script>
+二，加载水印
+<script type="text/javascript">
+	watermark.load({ watermark_txt: "测试水印" });
+</script>
