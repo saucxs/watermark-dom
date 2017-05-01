@@ -1,7 +1,8 @@
 # watermark
 水印插件，包含1、水印插件，2、水印插件的测试demo，3、read.me
 
-##1、水印插件-使用
+
+#1、水印插件-使用
 
 只是简单的加一个很浅的水印，实现起来很容易。不需要引入jquery插件。
 
@@ -23,7 +24,8 @@ http://www.chengxinsong.cn/sinaweibo/
 `git clone https://github.com/saucxs/watermark.git`
 
 
-##2、水印插件-测试demo
+
+#2、水印插件-测试demo
 
 `git clone https://github.com/saucxs/watermark.git`
 
