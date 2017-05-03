@@ -12,7 +12,7 @@
 
 获取方式：`git clone https://github.com/saucxs/watermark.git`
 
-在项目`javascript`中引入`watermark.js`
+在项目`javascript`中引入`watermark.js`，[注意]：这个要在dom加载完成之后添加，也就是在页面的最后添加这个段代码，可以参考watermark_demo1的源码。
 
         <!--watermark start-->
         		       <script src="js/watermark.js"></script>
