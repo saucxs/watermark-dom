@@ -21,7 +21,7 @@
 
 就可以看到效果，水印插件使用demo地址
 
-使用插件的效果地址：http://www.chengxinsong.cn/sinaweibo/
+使用插件的效果地址：http://www.chengxinsong.cn
 
 获取一个watermark_demo1的源码（watermark_demo1文件夹）
 
