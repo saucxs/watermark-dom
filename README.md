@@ -14,10 +14,9 @@
 
 第一步：获取组件方式：`git clone https://github.com/saucxs/watermark.git`
 
-第二步：clone后，在需要加水印的相关页面引入水印文件"index.js"或者"index.min.js":
+第二步：clone后，在需要加水印的相关页面引入水印文件"watermark.js":
 ```
-        script type="text/javascript" src="./watermark/index.js"></script>
-        或者是：<script type="text/javascript" src="./watermark/index.min.js"></script>
+        script type="text/javascript" src="./watermark/watermark.js"></script>
 ```
 
 第三步：在确保页面DOM加载完毕之后，调用watermark的load方法:
@@ -28,7 +27,10 @@
 ```
 
 使用插件的效果地址：http://www.chengxinsong.cn
+
+
 ![image](./examples/img/demo.png)
+
 获取一个watermark_demo1的源码（watermark_demo1文件夹）
 
 # 2、水印插件-testTool（测试工具）
