@@ -3,26 +3,27 @@
     // 加载水印
     var loadMark = function(settings) {
         var defaultSettings={
-            watermark_txt:"测试水印",
-            watermark_x:20,//水印起始位置x轴坐标
-            watermark_y:20,//水印起始位置Y轴坐标
-            watermark_rows:0,//水印行数
-            watermark_cols:0,//水印列数
-            watermark_x_space:100,//水印x轴间隔
-            watermark_y_space:50,//水印y轴间隔
-            watermark_font:'微软雅黑',//水印字体
-            watermark_color:'black',//水印字体颜色
-            watermark_fontsize:'18px',//水印字体大小
-            watermark_alpha:0.15,//水印透明度，要求设置在大于等于0.003
-            watermark_width:150,//水印宽度
-            watermark_height:100,//水印长度
-            watermark_angle:15,//水印倾斜度数
+            watermark_id: 'wm_div_id',       //水印总体的id
+            watermark_txt:"测试水印",        //水印的内容
+            watermark_x:20,                 //水印起始位置x轴坐标
+            watermark_y:20,                 //水印起始位置Y轴坐标
+            watermark_rows:0,               //水印行数
+            watermark_cols:0,               //水印列数
+            watermark_x_space:100,          //水印x轴间隔
+            watermark_y_space:50,           //水印y轴间隔
+            watermark_font:'微软雅黑',      //水印字体
+            watermark_color:'black',       //水印字体颜色
+            watermark_fontsize:'18px',     //水印字体大小
+            watermark_alpha:0.15,          //水印透明度，要求设置在大于等于0.003
+            watermark_width:150,           //水印宽度
+            watermark_height:100,          //水印长度
+            watermark_angle:15,            //水印倾斜度数
         };
-        console.log(defaultSettings);
+
         //采用配置项替换默认值，作用类似jquery.extend
-        if(arguments.length===1&&typeof arguments[0] ==="object" )
+        if(arguments.length === 1&&typeof arguments[0] ==="object" )
         {
-            var src=arguments[0]||{};
+            var src = arguments[0]||{};
             for(key in src)
             {
                 if(src[key]&&defaultSettings[key]&&src[key]===defaultSettings[key])
@@ -31,10 +32,13 @@
                     defaultSettings[key]=src[key];
             }
         }
-
-        if (window.watermarkdivs && window.watermarkdivs.length > 0) {
-            document.body.removeChild(document.getElementById("otdivid"));
-            window.watermarkdivs = [];
+        //如果元素存在就移除
+        var watermark_element = document.getElementById(defaultSettings.watermark_id);
+        if(watermark_element){
+            var _parentElement = watermark_element.parentNode;
+            if(_parentElement){
+                _parentElement.removeChild(watermark_element);
+            }
         }
 
         //获取页面最大宽度
@@ -44,13 +48,30 @@
 
         // 创建文档碎片
         var oTemp = document.createDocumentFragment();
+
         //创建水印外壳div
-        var otdiv = document.getElementById("otdivid");
+        var otdiv = document.getElementById(defaultSettings.watermark_id);
         if(!otdiv){
-            otdiv =document.createElement('div');
-            otdiv.id="otdivid";
+            otdiv = document.createElement('div');
+            //创建shadow dom
+            otdiv.id = defaultSettings.watermark_id;
             otdiv.style.pointerEvents = "none";
-            document.body.appendChild(otdiv);
+            //判断浏览器是否支持createShadowRoot方法
+            if(typeof otdiv.createShadowRoot === 'function'){
+                shadowRoot = otdiv.createShadowRoot();
+            }else{
+                shadowRoot = otdiv;
+            }
+            //将shadow dom随机插入到body内的任意位置
+            var nodeList = document.body.children;
+            var index = Math.floor(Math.random()*(nodeList.length-1));
+            if(nodeList[index]){
+                document.body.insertBefore(otdiv,nodeList[index]);
+            }else{
+                document.body.appendChild(otdiv);
+            }
+        }else if(otdiv,shadowRoot){
+            shadowRoot = otdiv.shadowRoot;
         }
 
         //如果将水印列数设置为0，或水印列数设置过大，超过页面最大宽度，则重新计算水印列数和水印x轴间隔
@@ -75,7 +96,7 @@
                 var oText=document.createTextNode(defaultSettings.watermark_txt);
                 mask_div.appendChild(oText);
                 // 设置水印相关属性start
-                mask_div.id = 'mask_div' + i + j;
+                mask_div.id = defaultSettings.watermark_id + i + j;
                 //设置水印div倾斜显示
                 mask_div.style.webkitTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
                 mask_div.style.MozTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
@@ -100,24 +121,23 @@
                 mask_div.style.display = "block";
                 //设置水印相关属性end
                 //附加到文档碎片中
-                otdiv.appendChild(mask_div);
-
-                window.watermarkdivs.push(otdiv); //控制页面大小变化时水印字体
+                shadowRoot.appendChild(mask_div);
             };
         };
-        //一次性添加到document中
-        document.body.appendChild(oTemp);
     };
-
+    //初始化水印，添加load和resize事件
     watermark.init = function(settings) {
-        window.onload = function() {
+        window.addEventListener('load',function () {
             loadMark(settings);
-        };
-        window.onresize = function() {
+        });
+        window.addEventListener('onrize',function () {
             loadMark(settings);
-        };
+        });
+        window.addEventListener('DOMContentLoaded',function () {
+            loadMark(settings);
+        })
     };
-
+    //手动加载水印
     watermark.load = function(settings){
         loadMark(settings);
     };

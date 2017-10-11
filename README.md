@@ -1,12 +1,12 @@
-# watermark
+## watermark-dom
 
 `watermark.js`是一个给B/S网站系统加一个很浅的水印插件，确保系统的保密性，安全性，降低数据泄密风险。
 
 水印插件内容，包含1、水印插件-使用，2、水印插件-测试demo，3、API介绍
 
-# 1、水印插件-使用
+## 1、水印插件-使用
 
-## 1.1 本地引入封装的js文件
+### 1.1 本地引入封装的js文件
 
 只是简单的加一个很浅的水印，实现起来很容易。不需要引入jquery插件。
 
@@ -33,7 +33,7 @@
 
 获取一个watermark_demo1的源码（watermark_demo1文件夹）
 
-# 2、水印插件-testTool（测试工具）
+## 2、水印插件-testTool（测试工具）
 
 获取方式：`git clone https://github.com/saucxs/watermark.git`
 
@@ -43,7 +43,7 @@
 ![image](./examples/img/demo2.png)
 
 
-# 3、API介绍
+## 3、API介绍
     
  格式：[请求类型:]URL地址
  
@@ -89,3 +89,6 @@
         "retMsg":"success",
         "retData":[]
     }
+
+## 4、支持浏览器
+Chrome,FireFox,IE11
