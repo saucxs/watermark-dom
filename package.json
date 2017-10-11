@@ -1,0 +1,23 @@
+{
+  "name": "watermark-dom",
+  "version": "1.0.0",
+  "description": "watermark for DOM",
+  "keywords": [
+    "watermark"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "optionalDependencies": {},
+  "readme": "使用手册https://github.com/saucxs/watermark/blob/master/README.md",
+  "readmeFilename": "README.md",
+  "author": "https://github.com/saucxs",
+  "license": "ISC",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  }
+}
