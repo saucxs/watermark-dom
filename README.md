@@ -2,7 +2,7 @@
 
 `watermark.js`是一个给B/S网站系统加一个很浅的水印插件，确保系统的保密性，安全性，降低数据泄密风险。
 
-水印插件内容，包含1、水印插件-使用，2、水印插件-测试demo，3、API介绍
+水印插件内容，包含1、水印插件-使用，2、水印插件-testTool（测试工具），3、API介绍，4、支持浏览器
 
 ## 1、水印插件-使用
 
@@ -38,6 +38,8 @@
 获取方式：`git clone https://github.com/saucxs/watermark.git`
 
 用浏览器打开index.html
+
+查看地址：http://suning.mwcxs.top
 
 看到水印插件-测试demo的效果
 ![image](./examples/img/demo2.png)
