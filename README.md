@@ -39,7 +39,7 @@
 
 用浏览器打开index.html
 
-查看地址：http://suning.mwcxs.top
+查看地址：http://blog.mwcxs.top/static/testTool/index.html
 
 看到水印插件-测试demo的效果
 ![image](./examples/img/demo2.png)
