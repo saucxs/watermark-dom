@@ -33,6 +33,23 @@
 
 获取一个watermark_demo1的源码（watermark_demo1文件夹）
 
+### 1.2 npm包引入
+第一步：npm获取水印组件包： 
+````
+npm install watermark-dom
+````
+第二步：引入水印模块：
+````
+import watermark from 'watermark-dom'
+或者
+var watermarkDom = require("watermark-dom")
+````
+第三步：在需要使用水印的页面js中调用水印初始化方法
+````
+watermark.init({ watermark_txt: "测试水印"});
+````
+
+
 ## 2、水印插件-testTool（测试工具）
 
 获取方式：`git clone https://github.com/saucxs/watermark.git`
