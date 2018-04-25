@@ -42,9 +42,9 @@
         }
 
         //获取页面最大宽度
-        var page_width = Math.max(document.body.scrollWidth,document.body.clientWidth);
+        var page_width = Math.max(document.body.scrollWidth,document.body.clientWidth)-30;
         //获取页面最大长度
-        var page_height = Math.max(document.body.scrollHeight,document.body.clientHeight);
+        var page_height = Math.max(document.body.scrollHeight,document.body.clientHeight)-30;
 
         // 创建文档碎片
         var oTemp = document.createDocumentFragment();
@@ -130,7 +130,7 @@
         window.addEventListener('load',function () {
             loadMark(settings);
         });
-        window.addEventListener('onrize',function () {
+        window.addEventListener('resize',function () {
             loadMark(settings);
         });
         window.addEventListener('DOMContentLoaded',function () {
