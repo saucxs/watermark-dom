@@ -130,7 +130,7 @@
         window.addEventListener('load',function () {
             loadMark(settings);
         });
-        window.addEventListener('onrize',function () {
+        window.addEventListener('resize',function () {
             loadMark(settings);
         });
         window.addEventListener('DOMContentLoaded',function () {

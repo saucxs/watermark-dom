@@ -114,7 +114,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="38" />
     <option name="y" value="108" />
     <option name="width" value="1936" />
@@ -300,12 +300,12 @@
       <workItem from="1507724942720" duration="2265000" />
       <workItem from="1520330500612" duration="392000" />
       <workItem from="1522058059997" duration="990000" />
-      <workItem from="1522070960087" duration="695000" />
+      <workItem from="1522070960087" duration="815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109251000" />
+    <option name="totallyTimeSpent" value="109371000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -317,7 +317,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
