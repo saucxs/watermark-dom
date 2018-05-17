@@ -110,4 +110,5 @@ watermark.init({ watermark_txt: "测试水印"});
     }
 
 ## 4、支持浏览器
-Chrome,FireFox,IE11
+Chrome,FireFox,IE6、7、8、9、10、11浏览器（鼠标事件向下传导，不支持select控件）
+IE6、7、8不支持旋转
