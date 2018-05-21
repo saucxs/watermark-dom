@@ -10,11 +10,11 @@
     </style>
 </head>
 
-<body style="width: 1800px;">
+<body>
 
-    <div style="width: 1000px;height:350px;overflow: auto;margin:50px; ">
+    <div>
 
-        <div id="test1" style="width: 1000px;height:300px;">
+        <div id="test1">
             <input id="txt0" type="text" value="0" />
             <input id="txt1" type="text" value="1" />
             <input id="txt2" type="text" value="2" />测试文字
@@ -73,11 +73,27 @@
             <input id="txt50" type="submit" value="51" onclick="alert('51');return false;" />
         </div>
     </div>
-    <iframe src="demo1.html" style="border: 0px;width: 1600px;height: 700px;"></iframe>
+    <!-- <iframe src="demo1.html" style="border: 0px;width: 1600px;height: 700px;"></iframe> -->
 
     <script src="watermark.js">
     </script>
     <script>
+        var MarkDefault = {
+            x: 50, //水印起始位置x轴坐标
+            y: 200, //水印起始位置Y轴坐标
+            rows: 0, //水印行数
+            cols: 0, //水印列数
+            x_space: 100, //水印x轴间隔
+            y_space: 50, //水印y轴间隔
+            font: '微软雅黑', //水印字体
+            color: 'black', //水印字体颜色
+            fontsize: '60px', //水印字体大小
+            alpha: 0.15, //水印透明度，要求设置在大于等于0.003
+            width: 360, //水印宽度
+            height: 350, //水印长度
+            angle: 310 //水印倾斜度数
+        };
+
         var showMarkText = "测试水印";
 
         function Dateformat(fthis, fmt) {
@@ -102,12 +118,15 @@
         }
 
 
-        var showText = showMarkText + "<br/>" + window.location.host + "<br/>" + Dateformat(new Date(),"yyyy-MM-dd hh:mm:ss");
-        watermark.init({ watermark_txt: showText,watermark_width: 200 });
+        MarkDefault.txt = showMarkText + "<br/>" + window.location.host + "<br/>" + Dateformat(new Date(),
+            "yyyy-MM-dd hh:mm:ss");
+        watermark.init(MarkDefault);
         // setInterval(function () {
         //     var showText1 = showMarkText+"<br/>" + window.location.host + "<br/>" + Dateformat(new Date(), "yyyy-MM-dd hh:mm:ss");
-        //     watermark.load({ watermark_txt: showText1, watermark_width: 200 });
+        //     watermark.load({ txt: showText1, width: 200 });
         // }, 5000); //每5秒刷新一次  5000的单位是毫秒
+
+        
     </script>
 </body>
 
