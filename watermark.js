@@ -9,7 +9,7 @@
  * License:GPL
  */
 
-```
+
 (function(watermark){
     window.watermarkdivs = [];
     // 加载水印
