@@ -34,7 +34,7 @@ watermark-dom 是采用GPL的自由软件。
          <!--watermark end-->
 ```
 
-使用插件的效果地址1：http://www.chengxinsong.cn
+使用插件的效果地址1：https://www.chengxinsong.cn
 使用插件的效果地址2：http://www.mwcxs.top/static/mybs/sinaweibo/index.html
 
 
