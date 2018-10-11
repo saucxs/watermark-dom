@@ -1,4 +1,16 @@
 ## watermark-dom
+
+# [jslib-base](https://github.com/yanhaijing/jslib-base)
+[![](https://img.shields.io/badge/Powered%20by-saucxs%20base-brightgreen.svg)](https://github.com/saucxs/watermark)
+[![GitHub license](https://img.shields.io/github/license/saucxs/watermark.svg)](https://github.com/saucxs/watermark/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/saucxs/watermark.svg)](https://github.com/saucxs/watermark/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/saucxs/watermark.svg)](https://github.com/saucxs/watermark/network)
+[![GitHub issues](https://img.shields.io/github/issues/saucxs/watermark.svg)](https://github.com/saucxs/watermark/issues)
+
+`watermark.js`是一个给B/S网站系统加一个很浅的水印插件，确保系统的保密性，安全性，降低数据泄密风险。
+
+水印插件内容，包含1、水印插件-使用，2、水印插件-testTool（测试工具），3、API介绍，4、支持浏览器
+
 ```
 watermark-dom is an GPL FreeSoftware.
 
@@ -7,10 +19,6 @@ watermark-dom 是采用GPL的自由软件。
 注意：基于本项目源码从事科研、论文、系统开发，"最好"在文中或系统中表明来自于本项目的内容和创意，否则所有贡献者可能会鄙视你和你的项目。 使用本项目源码请尊重程序员职业和劳动
 
 ```
-
-`watermark.js`是一个给B/S网站系统加一个很浅的水印插件，确保系统的保密性，安全性，降低数据泄密风险。
-
-水印插件内容，包含1、水印插件-使用，2、水印插件-testTool（测试工具），3、API介绍，4、支持浏览器
 
 ## 1、水印插件-使用
 
