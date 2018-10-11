@@ -1,7 +1,7 @@
 ## watermark-dom
 
 # [jslib-base](https://github.com/yanhaijing/jslib-base)
-[![](https://img.shields.io/badge/Powered%20by-saucxs%20base-brightgreen.svg)](https://github.com/saucxs/watermark)
+[![](https://img.shields.io/badge/Powered%20by-saucxs%20-brightgreen.svg)](https://github.com/saucxs/watermark)
 [![GitHub license](https://img.shields.io/github/license/saucxs/watermark.svg)](https://github.com/saucxs/watermark/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/saucxs/watermark.svg)](https://github.com/saucxs/watermark/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/saucxs/watermark.svg)](https://github.com/saucxs/watermark/network)
