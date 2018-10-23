@@ -1,9 +1,9 @@
 # [watermark](https://github.com/saucxs/watermark)
 [![](https://img.shields.io/badge/Powered%20by-saucxs%20-brightgreen.svg)](https://github.com/saucxs/watermark)
-[![GitHub license](https://img.shields.io/github/license/saucxs/watermark.svg)](https://github.com/saucxs/watermark/blob/master/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/saucxs/watermark.svg)](https://github.com/saucxs/watermark/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/saucxs/watermark.svg)](https://github.com/saucxs/watermark/network)
-[![GitHub issues](https://img.shields.io/github/issues/saucxs/watermark.svg)](https://github.com/saucxs/watermark/issues)
+[![GitHub license](https://img.shields.io/github/license/saucxs/watermark.svg)](https://github.com/saucxs/loveBook/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/saucxs/loveBook.svg)](https://github.com/saucxs/loveBook/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/saucxs/loveBook.svg)](https://github.com/saucxs/loveBook/network)
+[![GitHub issues](https://img.shields.io/github/issues/saucxs/loveBook.svg)](https://github.com/saucxs/loveBook/issues)
 
 `watermark.js`是一个给B/S网站系统加一个很浅的水印插件，确保系统的保密性，安全性，降低数据泄密风险。
 
