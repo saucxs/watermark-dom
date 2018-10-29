@@ -24,7 +24,7 @@
             watermark_y_space:50,//水印y轴间隔
             watermark_font:'微软雅黑',//水印字体
             watermark_color:'black',//水印字体颜色
-            watermark_fontsize:'18px',//水印字体大小
+            watermark_fontsize:'16px',//水印字体大小
             watermark_alpha:0.15,//水印透明度，要求设置在大于等于0.003
             watermark_width:150,//水印宽度
             watermark_height:100,//水印长度
@@ -61,6 +61,11 @@
             otdiv =document.createElement('div');
             otdiv.id="otdivid";
             otdiv.style.pointerEvents = "none";
+			otdiv.style.position = "absolute";
+			otdiv.style.top = "0";
+			otdiv.style.width = "100%";
+			otdiv.style.height = "100%";
+			otdiv.style.overflow = "hidden";
             document.body.appendChild(otdiv);
         }
 
@@ -83,8 +88,7 @@
                 x = defaultSettings.watermark_x + (defaultSettings.watermark_width + defaultSettings.watermark_x_space) * j;
 
                 var mask_div = document.createElement('div');
-                var oText=document.createTextNode(defaultSettings.watermark_txt);
-                mask_div.appendChild(oText);
+                mask_div.innerHTML = defaultSettings.watermark_txt;
                 // 设置水印相关属性start
                 mask_div.id = 'mask_div' + i + j;
                 //设置水印div倾斜显示
