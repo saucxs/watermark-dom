@@ -64,7 +64,7 @@
 			otdiv.style.position = "absolute";
 			otdiv.style.top = "0";
 			otdiv.style.width = "100%";
-			otdiv.style.height = "100%";
+			otdiv.style.height = page_height + "px";
 			otdiv.style.overflow = "hidden";
             document.body.appendChild(otdiv);
         }
@@ -130,6 +130,17 @@
         };
         window.onresize = function() {
             loadMark(settings);
+        };
+	var page_height = Math.max(document.body.scrollHeight, document.body.clientHeight);
+        if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+            //移动端scroll监听，上拉加载页面高度变化时同步水印
+            window.onscroll = function () {
+                var page_now = document.body.scrollHeight;
+                if (page_now > page_height) {
+                    page_height = page_now;
+                    loadMark(settings);
+                }
+            }
         };
     };
 
