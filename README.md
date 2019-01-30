@@ -34,9 +34,9 @@
          <!--watermark end-->
 ```
 
-使用插件的效果地址1：https://www.chengxinsong.cn
+使用插件的效果地址1：http://www.chengxinsong.cn
 
-使用插件的效果地址2：http://www.mwcxs.top/static/mybs/sinaweibo/index.html
+使用插件的效果地址2：https://www.mwcxs.top/static/mybs/sinaweibo/index.html
 
 
 ![image](./examples/img/demo.png)
@@ -66,7 +66,7 @@ watermark.init({ watermark_txt: "测试水印"});
 
 用浏览器打开index.html
 
-查看地址：http://blog.mwcxs.top/static/testTool/index.html
+查看地址：https://www.mwcxs.top/static/testTool/index.html
 
 看到水印插件-测试demo的效果
 ![image](./examples/img/demo2.png)
