@@ -128,4 +128,9 @@ watermark.init({ watermark_txt: "测试水印"});
     }
 
 ## 5、支持浏览器
+
 Chrome,FireFox,Safari,IE9及以上浏览器
+
+## 6、其他
+
+欢迎试用[watermark-image](https://github.com/saucxs/watermark-image)，目前功能：打马赛克
