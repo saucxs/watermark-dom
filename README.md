@@ -36,9 +36,6 @@
 
 使用插件的效果地址1：http://www.chengxinsong.cn
 
-使用插件的效果地址2：https://www.mwcxs.top/static/mybs/sinaweibo/index.html
-
-
 ![image](./examples/img/demo.png)
 
 获取一个watermark_demo1的源码（watermark_demo1文件夹）
