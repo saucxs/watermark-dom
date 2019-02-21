@@ -12,9 +12,20 @@
 
 注意：基于本项目源码从事科研、论文、系统开发，"最好"在文中或系统中表明来自于本项目的内容和创意，否则所有贡献者可能会鄙视你和你的项目。 使用本项目源码请尊重程序员职业和劳动
 
-## 1、水印插件-使用
+## 1、功能
++ 版本v 1.0.0
+    - 1、支持文本水印；
+    - 2、支持本地js，支持npm包；
+    - 2、支持浏览器：Chrome，Firefox，Safari；
+    - 3、支持api
 
-### 1.1 本地引入封装的js文件
++ 版本v 2.0.0
+    - 1、支持AMD，CommonJs，ES6 module；
+    - 2、支持浏览器：Chrome，Firefox，Safari，IE9及以上；    
+
+## 2、水印插件-使用
+
+### 2.1 本地引入封装的js文件
 
 只是简单的加一个很浅的水印，实现起来很容易。不需要引入jquery插件。
 
@@ -24,7 +35,7 @@
 
 第二步：clone后，在需要加水印的相关页面引入水印文件"watermark.js":
 ```
-        script type="text/javascript" src="./watermark/watermark.js"></script>
+        script type="text/javascript" src="./watermark.js"></script>
 ```
 
 第三步：在确保页面DOM加载完毕之后，调用watermark的load方法:
@@ -36,14 +47,15 @@
 
 使用插件的效果地址1：http://www.chengxinsong.cn
 
-使用插件的效果地址2：https://www.mwcxs.top/static/mybs/sinaweibo/index.html
+Sample One：https://www.mwcxs.top/static/testTool/examples/examples-simple/index.html
+
+Sample Two：https://www.mwcxs.top/static/testTool/examples/examples-setInterval/demo.html
 
 
 ![image](./examples/img/demo.png)
 
-获取一个watermark_demo1的源码（watermark_demo1文件夹）
+### 2.2 npm包引入
 
-### 1.2 npm包引入
 第一步：npm获取水印组件包： 
 ````
 npm install watermark-dom
@@ -60,11 +72,7 @@ watermark.init({ watermark_txt: "测试水印"});
 ````
 
 
-## 2、水印插件-testTool（测试工具）
-
-获取方式：`git clone https://github.com/saucxs/watermark.git`
-
-用浏览器打开index.html
+## 3、水印插件-testTool（测试工具）
 
 查看地址：https://www.mwcxs.top/static/testTool/index.html
 
@@ -72,7 +80,7 @@ watermark.init({ watermark_txt: "测试水印"});
 ![image](./examples/img/demo2.png)
 
 
-## 3、API介绍
+## 4、API介绍
     
  格式：[请求类型:]URL地址
  
@@ -119,6 +127,5 @@ watermark.init({ watermark_txt: "测试水印"});
         "retData":[]
     }
 
-## 4、支持浏览器
-Chrome,FireFox,IE6、7、8、9、10、11浏览器（鼠标事件向下传导，不支持select控件）
-IE6、7、8不支持旋转
+## 5、支持浏览器
+Chrome,FireFox,Safari,IE9及以上浏览器
