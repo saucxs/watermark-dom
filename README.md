@@ -20,7 +20,7 @@
     - 3、支持api
 
 + 版本v 2.0.0
-    - 1、支持AMD，CommonJs，ES6 module；
+    - 1、支持AMD，CommonJs，ES6 module模块规范；
     - 2、支持浏览器：Chrome，Firefox，Safari，IE9及以上；    
 
 ## 2、水印插件-使用
