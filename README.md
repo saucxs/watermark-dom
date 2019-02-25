@@ -35,14 +35,16 @@
 
 第二步：clone后，在需要加水印的相关页面引入水印文件"watermark.js":
 ```
-        script type="text/javascript" src="./watermark.js"></script>
+script type="text/javascript" src="./watermark.js"></script>
 ```
 
-第三步：在确保页面DOM加载完毕之后，调用watermark的load方法:
+第三步：在确保页面DOM加载完毕之后，调用watermark的load方法(手动加载):
 ```
-        <!--watermark start-->
-        		  <script>watermark.load({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
-         <!--watermark end-->
+   <script>watermark.load({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
+```
+注意：我们提供了init方法，用来初始化水印，添加load和resize事件
+```
+   <script>watermark.init({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
 ```
 
 使用插件的效果地址1：http://www.chengxinsong.cn
