@@ -68,10 +68,14 @@ import watermark from 'watermark-dom'
 或者
 var watermarkDom = require("watermark-dom")
 ````
-第三步：在需要使用水印的页面js中调用水印初始化方法
-````
-watermark.init({ watermark_txt: "测试水印"});
-````
+第三步：在确保页面DOM加载完毕之后，调用watermark的load方法(手动加载):
+```
+   <script>watermark.load({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
+```
+注意：我们提供了init方法，用来初始化水印，添加load和resize事件
+```
+   <script>watermark.init({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
+```
 
 
 ## 3、水印插件-testTool（测试工具）
