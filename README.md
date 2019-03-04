@@ -31,7 +31,7 @@
 
 `watermark.js`是必须要引进的组件
 
-第一步：获取组件方式：`git clone https://github.com/saucxs/watermark.git`
+第一步：获取组件方式：`git clone https://github.com/saucxs/watermark-dom.git`
 
 第二步：clone后，在需要加水印的相关页面引入水印文件"watermark.js":
 ```
