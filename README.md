@@ -139,4 +139,8 @@ Chrome,FireFox,Safari,IE9及以上浏览器
 
 ## 6、其他
 
-欢迎试用[watermark-image](https://github.com/saucxs/watermark-image)，目前功能：打马赛克
+欢迎使用[watermark-dom](https://github.com/saucxs/watermark-dom)插件，功能：给B/S网站系统加一个很浅的dom水印插件。
+
+欢迎使用[captcha-mini](https://github.com/saucxs/captcha)插件，功能：生成验证码的插件，使用js和canvas生成的
+
+欢迎使用[watermark-image](https://github.com/saucxs/watermark-image)插件，目前功能：图片打马赛克
