@@ -164,11 +164,11 @@ watermark.remove();
         "retData":[]
     }
 
-## 5、支持浏览器
+## 6、支持浏览器
 
 Chrome,FireFox,Safari,IE9及以上浏览器
 
-## 6、其他
+## 7、其他
 
 欢迎使用[watermark-dom](https://github.com/saucxs/watermark-dom)插件，功能：给B/S网站系统加一个很浅的dom水印插件。
 
