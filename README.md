@@ -23,6 +23,11 @@
     - 1、支持AMD，CommonJs，ES6 module模块规范；
     - 2、支持浏览器：Chrome，Firefox，Safari，IE9及以上；    
 
++ 版本v 2.0.1  更新时间：2019.06.12
+    - 1、支持移除水印方法remove()
+    - 2、废弃生成水印的createShadowRoot方法，而使用attachShadow方法。（使用上没有影响，因为最初设计时候做了兼容处理）
+   
+
 ## 2、水印插件-使用
 
 ### 2.1 本地引入封装的js文件
@@ -86,7 +91,33 @@ var watermarkDom = require("watermark-dom")
 ![image](./examples/img/demo2.png)
 
 
-## 4、API介绍
+## 4、内置的方法
+
+### 4.1 watermark.init(setting);
+初始化水印，添加load和resize事件
+
+例子
+```js
+watermark.init({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" });
+``` 
+
+### 4.2 watermark.load(setting); 
+手动加载水印
+
+例子
+```js
+watermark.load({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" });
+``` 
+
+### 4.3 watermark.remove(); 
+手动移除水印
+
+例子
+```js
+watermark.remove();
+``` 
+
+## 5、API介绍
     
  格式：[请求类型:]URL地址
  
