@@ -108,7 +108,7 @@
             otdiv.id = defaultSettings.watermark_id;
             otdiv.style.pointerEvents = "none";
 
-            /*判断浏览器是否支持createShadowRoot方法*/
+            /*判断浏览器是否支持attachShadow方法*/
             if(typeof otdiv.attachShadow === 'function'){
                 /* createShadowRoot Deprecated. Not for use in new websites. Use attachShadow*/
                 shadowRoot = otdiv.attachShadow({mode: 'open'});
