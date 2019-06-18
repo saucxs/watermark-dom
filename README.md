@@ -1,18 +1,18 @@
-# [watermark](https://github.com/saucxs/watermark)
-[![](https://img.shields.io/badge/Powered%20by-saucxs%20-brightgreen.svg)](https://github.com/saucxs/watermark)
-[![GitHub license](https://img.shields.io/github/license/saucxs/watermark.svg)](https://github.com/saucxs/watermark/blob/master/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/saucxs/watermark.svg)](https://github.com/saucxs/watermark/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/saucxs/watermark.svg)](https://github.com/saucxs/watermark/network)
-[![GitHub issues](https://img.shields.io/github/issues/saucxs/watermark.svg)](https://github.com/saucxs/watermark/issues)
+# [watermark-dom](https://github.com/saucxs/watermark-dom)
+[![](https://img.shields.io/badge/Powered%20by-saucxs%20-brightgreen.svg)](https://github.com/saucxs/watermark-dom)
+[![GitHub license](https://img.shields.io/github/license/saucxs/watermark.svg)](https://github.com/saucxs/watermark-dom/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/saucxs/watermark.svg)](https://github.com/saucxs/watermark-dom/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/saucxs/watermark.svg)](https://github.com/saucxs/watermark-dom/network)
+[![GitHub issues](https://img.shields.io/github/issues/saucxs/watermark.svg)](https://github.com/saucxs/watermark-dom/issues)
 
 
 `watermark.js`是一个给B/S网站系统加一个很浅的水印插件，确保系统的保密性，安全性，降低数据泄密风险。
 
-水印插件内容，包含1、水印插件-使用，2、水印插件-testTool（测试工具），3、API介绍，4、支持浏览器
+水印插件内容，包含1、版本，2、水印插件-使用，3、水印插件-testTool（测试工具），4、内置方法，5、支持各种属性配置使用，等等。
 
 注意：基于本项目源码从事科研、论文、系统开发，"最好"在文中或系统中表明来自于本项目的内容和创意，否则所有贡献者可能会鄙视你和你的项目。 使用本项目源码请尊重程序员职业和劳动
 
-## 1、功能
+## 1、版本
 + 版本v 1.0.0
     - 1、支持文本水印；
     - 2、支持本地js，支持npm包；
@@ -37,44 +37,9 @@
      - 发布最新npm包`npm i watermark-dom @2.0.3`，支持方法：`init(), load(), remove()`,放心使用
 
 
-## 2、水印插件-testTool（测试工具）
+## 2、水印插件-使用
 
-查看地址：https://www.mwcxs.top/static/testTool/index.html
-
-看到水印插件-测试demo的效果
-![image](./examples/img/demo2.png)
-
-
-## 3、内置方法
-
-### 3.1 watermark.init(setting);
-初始化水印，添加load和resize事件
-
-例子
-```js
-watermark.init({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" });
-``` 
-
-### 3.2 watermark.load(setting); 
-手动加载水印
-
-例子
-```js
-watermark.load({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" });
-``` 
-
-### 3.3 watermark.remove(); 
-手动移除水印
-
-例子
-```js
-watermark.remove();
-``` 
-
-
-## 4、水印插件-使用
-
-### 4.1 本地引入封装的js文件
+### 2.1 本地引入封装的js文件
 
 只是简单的加一个很浅的水印，实现起来很容易。不需要引入jquery插件。
 
@@ -105,7 +70,7 @@ Sample Two：https://www.mwcxs.top/static/testTool/examples/examples-setInterval
 
 ![image](./examples/img/demo.png)
 
-### 4.2 npm包引入
+### 2.2 npm包引入
 
 第一步：npm获取水印组件包： 
 ````
@@ -125,6 +90,41 @@ var watermarkDom = require("watermark-dom")
 ```
    <script>watermark.init({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
 ```
+
+## 3、水印插件-testTool（测试工具）
+
+查看地址：https://www.mwcxs.top/static/testTool/index.html
+
+看到水印插件-测试demo的效果
+![image](./examples/img/demo2.png)
+
+
+## 4、内置方法
+
+### 4.1 watermark.init(setting);
+初始化水印，添加load和resize事件
+
+例子
+```js
+watermark.init({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" });
+``` 
+
+### 4.2 watermark.load(setting); 
+手动加载水印
+
+例子
+```js
+watermark.load({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" });
+``` 
+
+### 4.3 watermark.remove(); 
+手动移除水印
+
+例子
+```js
+watermark.remove();
+``` 
+
 
 
 ## 5、支持各种属性配置使用
