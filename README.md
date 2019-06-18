@@ -1,9 +1,9 @@
 # [watermark-dom](https://github.com/saucxs/watermark-dom)
 [![](https://img.shields.io/badge/Powered%20by-saucxs%20-brightgreen.svg)](https://github.com/saucxs/watermark-dom)
-[![GitHub license](https://img.shields.io/github/license/saucxs/watermark.svg)](https://github.com/saucxs/watermark-dom/blob/master/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/saucxs/watermark.svg)](https://github.com/saucxs/watermark-dom/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/saucxs/watermark.svg)](https://github.com/saucxs/watermark-dom/network)
-[![GitHub issues](https://img.shields.io/github/issues/saucxs/watermark.svg)](https://github.com/saucxs/watermark-dom/issues)
+[![GitHub license](https://img.shields.io/github/license/saucxs/watermark-dom.svg)](https://github.com/saucxs/watermark-dom/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/saucxs/watermark-dom.svg)](https://github.com/saucxs/watermark-dom/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/saucxs/watermark-dom.svg)](https://github.com/saucxs/watermark-dom/network)
+[![GitHub issues](https://img.shields.io/github/issues/saucxs/watermark-dom.svg)](https://github.com/saucxs/watermark-dom/issues)
 
 
 `watermark.js`是一个给B/S网站系统加一个很浅的水印插件，确保系统的保密性，安全性，降低数据泄密风险。
