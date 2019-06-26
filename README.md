@@ -1,10 +1,25 @@
 # [watermark-dom](https://github.com/saucxs/watermark-dom)
 [![](https://img.shields.io/badge/Powered%20by-saucxs%20-brightgreen.svg)](https://github.com/saucxs/watermark-dom)
-[![GitHub license](https://img.shields.io/github/license/saucxs/watermark-dom.svg)](https://github.com/saucxs/watermark-dom/blob/master/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/saucxs/watermark-dom.svg)](https://github.com/saucxs/watermark-dom/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/saucxs/watermark-dom.svg)](https://github.com/saucxs/watermark-dom/network)
-[![GitHub issues](https://img.shields.io/github/issues/saucxs/watermark-dom.svg)](https://github.com/saucxs/watermark-dom/issues)
+[![GitHub license][license-image]][license-url]
+[![GitHub version][version-image]][version-url]
+[![GitHub stars][stars-image]][stars-url]
+[![GitHub forks][forks-image]][forks-url]
+[![GitHub issues][issues-image]][issues-image]
+[![npm download][download-image]][download-url]
 
+
+[license-image]: https://img.shields.io/github/license/saucxs/watermark-dom.svg
+[license-url]: https://github.com/saucxs/watermark-dom/blob/master/LICENSE
+[version-image]: https://img.shields.io/github/package-json/v/saucxs/watermark-dom.svg
+[version-url]: https://github.com/saucxs/watermark-dom/blob/master/package-json
+[stars-image]: https://img.shields.io/github/stars/saucxs/watermark-dom.svg
+[stars-url]: https://github.com/saucxs/watermark-dom/stargazers
+[forks-image]: https://img.shields.io/github/forks/saucxs/watermark-dom.svg
+[forks-url]: https://github.com/saucxs/watermark-dom/network
+[issues-image]: https://img.shields.io/github/issues/saucxs/watermark-dom.svg
+[issues-url]: https://github.com/saucxs/watermark-dom/issues
+[download-image]: https://img.shields.io/npm/dm/watermark-dom.svg
+[download-url]: https://npmjs.org/package/watermark-dom
 
 `watermark.js`是一个给B/S网站系统加一个很浅的水印插件，确保系统的保密性，安全性，降低数据泄密风险。
 
