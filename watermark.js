@@ -26,7 +26,7 @@
         watermark_y:20,                     //水印起始位置Y轴坐标
         watermark_rows:0,                   //水印行数
         watermark_cols:0,                   //水印列数
-        watermark_x_space:100,              //水印x轴间隔
+        watermark_x_space:50,              //水印x轴间隔
         watermark_y_space:50,               //水印y轴间隔
         watermark_font:'微软雅黑',           //水印字体
         watermark_color:'black',            //水印字体颜色
@@ -73,7 +73,6 @@
 
         var page_offsetTop = 0;
         var page_offsetLeft = 0;
-
         if(setting.watermark_parent_width || setting.watermark_parent_height){
             setting.watermark_parent_width?(page_width = setting.watermark_parent_width-defaultSettings.watermark_width/2):(defaultSettings.watermark_parent_node)?(page_width = parentEle.offsetWidth-defaultSettings.watermark_width/2):void 0;
             setting.watermark_parent_height?(page_height = setting.watermark_parent_height-defaultSettings.watermark_height/2):(defaultSettings.watermark_parent_node)?(page_height = Math.max(parentEle.offsetHeight,parentEle.scrollHeight)-defaultSettings.watermark_height/2):void 0;
@@ -130,15 +129,20 @@
         }
 
 
-        /*如果将水印列数设置为0，或水印列数设置过大，超过页面最大宽度，则重新计算水印列数和水印x轴间隔*/
-        if (defaultSettings.watermark_cols == 0 || (parseInt(defaultSettings.watermark_x + defaultSettings.watermark_width *defaultSettings.watermark_cols + defaultSettings.watermark_x_space * (defaultSettings.watermark_cols - 1)) > page_width)) {
-            defaultSettings.watermark_cols = parseInt((page_width - defaultSettings.watermark_x + page_offsetLeft) / (defaultSettings.watermark_width + defaultSettings.watermark_x_space));
-            defaultSettings.watermark_x_space = parseInt((page_width - defaultSettings.watermark_x+ page_offsetLeft - defaultSettings.watermark_width * defaultSettings.watermark_cols) / (defaultSettings.watermark_cols - 1));
+        /*三种情况下会重新计算水印列数和x方向水印间隔：1、水印列数设置为0，2、水印长度大于页面长度，3、水印长度小于于页面长度*/
+        var frontWidth = defaultSettings.watermark_x + page_offsetLeft + defaultSettings.watermark_width * defaultSettings.watermark_cols + defaultSettings.watermark_x_space * (defaultSettings.watermark_cols - 1);
+        if (defaultSettings.watermark_cols == 0 || frontWidth + defaultSettings.watermark_width < page_width || frontWidth > page_width) {
+            defaultSettings.watermark_cols = parseInt((page_width - defaultSettings.watermark_x + page_offsetLeft) / (defaultSettings.watermark_width + defaultSettings.watermark_x_space/2));
+            var temp_watermark_x_space = parseInt((page_width - defaultSettings.watermark_x+ page_offsetLeft - defaultSettings.watermark_width * defaultSettings.watermark_cols) / (defaultSettings.watermark_cols));
+            defaultSettings.watermark_x_space = temp_watermark_x_space? defaultSettings.watermark_x_space:temp_watermark_x_space;
         }
-        /*如果将水印行数设置为0，或水印行数设置过大，超过页面最大长度，则重新计算水印行数和水印y轴间隔*/
-        if (defaultSettings.watermark_rows == 0 || (parseInt(defaultSettings.watermark_y + defaultSettings.watermark_height * defaultSettings.watermark_rows + defaultSettings.watermark_y_space * (defaultSettings.watermark_rows - 1)) > page_height)) {
-            defaultSettings.watermark_rows = parseInt((page_height - defaultSettings.watermark_y + page_offsetTop) / (defaultSettings.watermark_height + defaultSettings.watermark_y_space));
-            defaultSettings.watermark_y_space = parseInt(((page_height - defaultSettings.watermark_y + page_offsetTop) - defaultSettings.watermark_height * defaultSettings.watermark_rows) / (defaultSettings.watermark_rows - 1));
+
+        /*三种情况下会重新计算水印列数和x方向水印间隔：1、水印列数设置为0，2、水印长度大于页面长度，3、水印长度小于于页面长度*/
+        var frontHeight = defaultSettings.watermark_y + page_offsetTop + defaultSettings.watermark_height * defaultSettings.watermark_rows + defaultSettings.watermark_y_space * (defaultSettings.watermark_rows - 1);
+        if (defaultSettings.watermark_rows == 0 || frontHeight + defaultSettings.watermark_height < page_height || frontHeight > page_height) {
+            defaultSettings.watermark_rows = parseInt((page_height - defaultSettings.watermark_y + page_offsetTop) / (defaultSettings.watermark_height + defaultSettings.watermark_y_space/2));
+            var temp_watermark_y_space = parseInt((page_width - defaultSettings.watermark_x+ page_offsetLeft - defaultSettings.watermark_width * defaultSettings.watermark_cols) / (defaultSettings.watermark_cols));
+            defaultSettings.watermark_y_space = temp_watermark_y_space? defaultSettings.watermark_y_space:temp_watermark_y_space;
         }
 
         var x;

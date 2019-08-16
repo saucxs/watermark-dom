@@ -21,13 +21,14 @@
 [download-image]: https://img.shields.io/npm/dm/watermark-dom.svg
 [download-url]: https://npmjs.org/package/watermark-dom
 
-`watermark.js`是一个给B/S网站系统加一个很浅的水印插件，确保系统的保密性，安全性，降低数据泄密风险。
+`watermark.js`是一个给B/S网站系统加水印的插件，确保系统保密性，安全性，降低数据泄密风险。简单易上手，支持多属性配置，支持本地和npm包引入，支持commonjs和es6引入。全局API有init()，load()，remove()方法。使用的是css3的pointer-events事件穿透属性和opacity透明属性，Shadow DOM(影子DOM)结构进行水印内容封装，随机插入到body下
 
-水印插件内容，包含1、版本，2、水印插件-使用，3、水印插件-testTool（测试工具），4、内置方法，5、支持各种属性配置使用，等等。
+
+水印插件内容，包含1、版本及功能，2、水印插件-使用，3、水印插件-testTool（测试工具），4、内置方法，5、支持各种属性配置使用，等等。
 
 注意：基于本项目源码从事科研、论文、系统开发，"最好"在文中或系统中表明来自于本项目的内容和创意，否则所有贡献者可能会鄙视你和你的项目。 使用本项目源码请尊重程序员职业和劳动
 
-## 1、版本
+## 1、版本及功能
 + 版本v 1.0.0
     - 1、支持文本水印；
     - 2、支持本地js，支持npm包；
@@ -51,6 +52,10 @@
 + 版本v 2.0.3  更新时间：2019.06.18
      - 发布最新npm包`npm i watermark-dom @2.0.3`，支持方法：`init(), load(), remove()`,放心使用
 
++ 版本v 2.1.3  更新时间：2019.08.16
+     - 新增支持滚屏，谢谢[ishwy](https://github.com/saucxs/watermark-dom/issues/27)提出。
+     - 解决缩放存在水印消失的问题，谢谢[wangmeng1991](https://github.com/saucxs/watermark-dom/issues/22)指出。
+     - 解决loadMark多次调用时defaultSettings变量的复用问题，谢谢[shellphon](https://github.com/saucxs/watermark-dom/issues/23)指出。
 
 ## 2、水印插件-使用
 
