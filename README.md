@@ -52,7 +52,7 @@
 + 版本v 2.0.3  更新时间：2019.06.18
      - 发布最新npm包`npm i watermark-dom @2.0.3`，支持方法：`init(), load(), remove()`,放心使用
 
-+ 版本v 2.1.3  更新时间：2019.08.16
++ 版本v 2.1.0  更新时间：2019.08.16
      - 新增支持滚屏，谢谢[ishwy](https://github.com/saucxs/watermark-dom/issues/27)提出。
      - 解决缩放存在水印消失的问题，谢谢[wangmeng1991](https://github.com/saucxs/watermark-dom/issues/22)指出。
      - 解决loadMark多次调用时defaultSettings变量的复用问题，谢谢[shellphon](https://github.com/saucxs/watermark-dom/issues/23)指出。
@@ -106,9 +106,13 @@ var watermarkDom = require("watermark-dom")
 ```
    <script>watermark.load({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
 ```
-注意：我们提供了init方法，用来初始化水印，添加load和resize事件
+注意：(1)我们提供了init方法，用来初始化水印，添加load和resize事件
 ```
    <script>watermark.init({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
+```
+注意：(2)我们提供了remove方法，用来移除水印
+```
+   <script>watermark.remove({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
 ```
 
 ## 3、水印插件-testTool（测试工具）
