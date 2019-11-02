@@ -105,6 +105,7 @@
 
             /*创建shadow dom*/
             otdiv.id = defaultSettings.watermark_id;
+            otdiv.setAttribute('style','pointerEvents: none !important; display: block !important');
             otdiv.style.pointerEvents = "none";
 
             /*判断浏览器是否支持attachShadow方法*/
@@ -132,7 +133,7 @@
         /*三种情况下会重新计算水印列数和x方向水印间隔：1、水印列数设置为0，2、水印长度大于页面长度，3、水印长度小于于页面长度*/
         var frontWidth = defaultSettings.watermark_x + page_offsetLeft + defaultSettings.watermark_width * defaultSettings.watermark_cols + defaultSettings.watermark_x_space * (defaultSettings.watermark_cols - 1);
         if (defaultSettings.watermark_cols == 0 || frontWidth + defaultSettings.watermark_width < page_width || frontWidth > page_width) {
-            defaultSettings.watermark_cols = parseInt((page_width - defaultSettings.watermark_x + page_offsetLeft) / (defaultSettings.watermark_width + defaultSettings.watermark_x_space/2));
+            defaultSettings.watermark_cols = parseInt((page_width - defaultSettings.watermark_x + page_offsetLeft) / (defaultSettings.watermark_width + defaultSettings.watermark_x_space));
             var temp_watermark_x_space = parseInt((page_width - defaultSettings.watermark_x+ page_offsetLeft - defaultSettings.watermark_width * defaultSettings.watermark_cols) / (defaultSettings.watermark_cols));
             defaultSettings.watermark_x_space = temp_watermark_x_space? defaultSettings.watermark_x_space:temp_watermark_x_space;
         }
@@ -140,7 +141,7 @@
         /*三种情况下会重新计算水印列数和x方向水印间隔：1、水印列数设置为0，2、水印长度大于页面长度，3、水印长度小于于页面长度*/
         var frontHeight = defaultSettings.watermark_y + page_offsetTop + defaultSettings.watermark_height * defaultSettings.watermark_rows + defaultSettings.watermark_y_space * (defaultSettings.watermark_rows - 1);
         if (defaultSettings.watermark_rows == 0 || frontHeight + defaultSettings.watermark_height < page_height || frontHeight > page_height) {
-            defaultSettings.watermark_rows = parseInt((page_height - defaultSettings.watermark_y + page_offsetTop) / (defaultSettings.watermark_height + defaultSettings.watermark_y_space/2));
+            defaultSettings.watermark_rows = parseInt((page_height - defaultSettings.watermark_y + page_offsetTop) / (defaultSettings.watermark_height + defaultSettings.watermark_y_space));
             var temp_watermark_y_space = parseInt((page_width - defaultSettings.watermark_x+ page_offsetLeft - defaultSettings.watermark_width * defaultSettings.watermark_cols) / (defaultSettings.watermark_cols));
             defaultSettings.watermark_y_space = temp_watermark_y_space? defaultSettings.watermark_y_space:temp_watermark_y_space;
         }

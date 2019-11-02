@@ -61,6 +61,11 @@
      - 解决缩放存在水印消失的问题，谢谢[wangmeng1991](https://github.com/saucxs/watermark-dom/issues/22)指出。
      - 解决loadMark多次调用时defaultSettings变量的复用问题，谢谢[shellphon](https://github.com/saucxs/watermark-dom/issues/23)指出。
 
++ 版本v 2.1.1  更新时间：2019.11.02
+  - 水印可以被隐藏，谢谢[maqingbo](https://github.com/saucxs/watermark-dom/issues/29)
+  - 水印图层会撑开默认页面宽度的情况，谢谢[dyh333](https://github.com/saucxs/watermark-dom/issues/30)和[rumenxiaozi](https://github.com/saucxs/watermark-dom/issues/30)和[jixiang155](https://github.com/saucxs/watermark-dom/issues/30)提出。
+
+
 ## 2、水印插件-使用
 
 ### 2.1 本地引入封装的js文件
