@@ -33,42 +33,41 @@
 注意：基于本项目源码从事科研、论文、系统开发，"最好"在文中或系统中表明来自于本项目的内容和创意，否则所有贡献者可能会鄙视你和你的项目。 使用本项目源码请尊重程序员职业和劳动
 
 ## 1、版本及功能
-+ 版本v 1.0.0
-    - 1、支持文本水印；
-    - 2、支持本地js，支持npm包；
-    - 2、支持浏览器：Chrome，Firefox，Safari；
-    - 3、支持api
++ 版本v 2.2.0  更新时间：2019.11.11
+  - 解决watermark_parent_node不管用，谢谢[Tianruo](https://github.com/saucxs/watermark-dom/issues/28)和[sunweiconfidence](https://github.com/saucxs/watermark-dom/issues/28)
+  - 解决水印显示不全，谢谢[ydCao](https://github.com/saucxs/watermark-dom/issues/32)和[Altamill](https://github.com/saucxs/watermark-dom/issues/32)提出。
 
-+ 版本v 2.0.0
-    - 1、支持AMD，CommonJs，ES6 module模块规范；
-    - 2、支持浏览器：Chrome，Firefox，Safari，IE9及以上；
-    - 3、未发布到最新npm包  
-
-+ 版本v 2.0.1  更新时间：2019.06.12
-    - 1、支持移除水印方法remove()
-    - 2、废弃生成水印的createShadowRoot方法，而使用attachShadow方法。（使用上没有影响，因为最初设计时候做了兼容处理）
-    - 3、未发布到最新npm包  
-
-+ 版本v 2.0.2  更新时间：2019.06.17
-    - 作为更新npm包，出现的问题，请不要用这个版本的包
-    - 发布到最新npm包，有问题，误用  
- 
-+ 版本v 2.0.3  更新时间：2019.06.18
-     - 发布最新npm包`npm i watermark-dom @2.0.3`，支持方法：`init(), load(), remove()`,放心使用
++ 版本v 2.1.1  更新时间：2019.11.02
+  - 解决水印可以被隐藏，谢谢[maqingbo](https://github.com/saucxs/watermark-dom/issues/29)
+  - 解决水印图层会撑开默认页面宽度的情况，谢谢[dyh333](https://github.com/saucxs/watermark-dom/issues/30)和[rumenxiaozi](https://github.com/saucxs/watermark-dom/issues/30)和[jixiang155](https://github.com/saucxs/watermark-dom/issues/30)提出。
 
 + 版本v 2.1.0  更新时间：2019.08.16
      - 新增支持滚屏，谢谢[ishwy](https://github.com/saucxs/watermark-dom/issues/27)提出。
      - 解决缩放存在水印消失的问题，谢谢[wangmeng1991](https://github.com/saucxs/watermark-dom/issues/22)指出。
      - 解决loadMark多次调用时defaultSettings变量的复用问题，谢谢[shellphon](https://github.com/saucxs/watermark-dom/issues/23)指出。
 
-+ 版本v 2.1.1  更新时间：2019.11.02
-  - 解决水印可以被隐藏，谢谢[maqingbo](https://github.com/saucxs/watermark-dom/issues/29)
-  - 解决水印图层会撑开默认页面宽度的情况，谢谢[dyh333](https://github.com/saucxs/watermark-dom/issues/30)和[rumenxiaozi](https://github.com/saucxs/watermark-dom/issues/30)和[jixiang155](https://github.com/saucxs/watermark-dom/issues/30)提出。
++ 版本v 2.0.3  更新时间：2019.06.18
+     - 发布最新npm包`npm i watermark-dom @2.0.3`，支持方法：`init(), load(), remove()`,放心使用
 
-+ 版本v 2.2.0  更新时间：2019.11.11
-  - 解决watermark_parent_node不管用，谢谢[Tianruo](https://github.com/saucxs/watermark-dom/issues/28)和[sunweiconfidence](https://github.com/saucxs/watermark-dom/issues/28)
-  - 解决水印显示不全，谢谢[ydCao](https://github.com/saucxs/watermark-dom/issues/32)和[Altamill](https://github.com/saucxs/watermark-dom/issues/32)提出。
++ 版本v 2.0.2  更新时间：2019.06.17
+    - 作为更新npm包，出现的问题，请不要用这个版本的包
+    - 发布到最新npm包，有问题，误用  
+ 
++ 版本v 2.0.1  更新时间：2019.06.12
+    - 1、支持移除水印方法remove()
+    - 2、废弃生成水印的createShadowRoot方法，而使用attachShadow方法。（使用上没有影响，因为最初设计时候做了兼容处理）
+    - 3、未发布到最新npm包  
 
++ 版本v 2.0.0
+    - 1、支持AMD，CommonJs，ES6 module模块规范；
+    - 2、支持浏览器：Chrome，Firefox，Safari，IE9及以上；
+    - 3、未发布到最新npm包  
+
++ 版本v 1.0.0
+    - 1、支持文本水印；
+    - 2、支持本地js，支持npm包；
+    - 2、支持浏览器：Chrome，Firefox，Safari；
+    - 3、支持api
 
 ## 2、水印插件-使用
 
