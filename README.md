@@ -62,8 +62,12 @@
      - 解决loadMark多次调用时defaultSettings变量的复用问题，谢谢[shellphon](https://github.com/saucxs/watermark-dom/issues/23)指出。
 
 + 版本v 2.1.1  更新时间：2019.11.02
-  - 水印可以被隐藏，谢谢[maqingbo](https://github.com/saucxs/watermark-dom/issues/29)
-  - 水印图层会撑开默认页面宽度的情况，谢谢[dyh333](https://github.com/saucxs/watermark-dom/issues/30)和[rumenxiaozi](https://github.com/saucxs/watermark-dom/issues/30)和[jixiang155](https://github.com/saucxs/watermark-dom/issues/30)提出。
+  - 解决水印可以被隐藏，谢谢[maqingbo](https://github.com/saucxs/watermark-dom/issues/29)
+  - 解决水印图层会撑开默认页面宽度的情况，谢谢[dyh333](https://github.com/saucxs/watermark-dom/issues/30)和[rumenxiaozi](https://github.com/saucxs/watermark-dom/issues/30)和[jixiang155](https://github.com/saucxs/watermark-dom/issues/30)提出。
+
++ 版本v 2.2.0  更新时间：2019.11.11
+  - 解决watermark_parent_node不管用，谢谢[Tianruo](https://github.com/saucxs/watermark-dom/issues/28)和[sunweiconfidence](https://github.com/saucxs/watermark-dom/issues/28)
+  - 解决水印显示不全，谢谢[ydCao](https://github.com/saucxs/watermark-dom/issues/32)和[Altamill](https://github.com/saucxs/watermark-dom/issues/32)提出。
 
 
 ## 2、水印插件-使用
