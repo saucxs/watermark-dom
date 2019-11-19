@@ -76,7 +76,7 @@
     var page_width = Math.max(watermark_hook_element.scrollWidth,watermark_hook_element.clientWidth);
     /*获取页面最大长度*/
     // var page_height = Math.max(watermark_hook_element.scrollHeight,watermark_hook_element.clientHeight,document.documentElement.clientHeight)-defaultSettings.watermark_height/2;
-    var page_height = Math.max(watermark_hook_element.scrollHeight,watermark_hook_element.clientHeight,document.documentElement.clientHeight);
+    var page_height = Math.max(watermark_hook_element.scrollHeight,watermark_hook_element.clientHeight);
 
     var setting = arguments[0]||{};
     var parentEle = watermark_hook_element;

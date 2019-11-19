@@ -33,6 +33,9 @@
 注意：基于本项目源码从事科研、论文、系统开发，"最好"在文中或系统中表明来自于本项目的内容和创意，否则所有贡献者可能会鄙视你和你的项目。 使用本项目源码请尊重程序员职业和劳动
 
 ## 1、版本及功能
++ 版本v 2.2.1  更新时间：2019.11.19
+  - 解决水印图层会撑开页面高度的问题，谢谢[JeanZhao](https://github.com/saucxs/watermark-dom/issues/33)和[paperscz ](https://github.com/saucxs/watermark-dom/issues/33)
+
 + 版本v 2.2.0  更新时间：2019.11.11
   - 解决watermark_parent_node不管用，谢谢[Tianruo](https://github.com/saucxs/watermark-dom/issues/28)和[sunweiconfidence](https://github.com/saucxs/watermark-dom/issues/28)
   - 解决水印显示不全，谢谢[ydCao](https://github.com/saucxs/watermark-dom/issues/32)和[Altamill](https://github.com/saucxs/watermark-dom/issues/32)提出。
