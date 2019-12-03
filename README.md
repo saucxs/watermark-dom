@@ -84,7 +84,7 @@
 
 第二步：clone后，在需要加水印的相关页面引入水印文件"watermark.js":
 ```
-script type="text/javascript" src="./watermark.js"></script>
+<script type="text/javascript" src="./watermark.js"></script>
 ```
 
 第三步：在确保页面DOM加载完毕之后，调用watermark的load方法(手动加载):
