@@ -37,8 +37,10 @@
     watermark_angle:15,                 //水印倾斜度数
     watermark_parent_width:0,      //水印的总体宽度（默认值：body的scrollWidth和clientWidth的较大值）
     watermark_parent_height:0,     //水印的总体高度（默认值：body的scrollHeight和clientHeight的较大值）
-    watermark_parent_node:null     //水印插件挂载的父元素element,不输入则默认挂在body上
+    watermark_parent_node:null,     //水印插件挂载的父元素element,不输入则默认挂在body上
+    monitor:true,                   //monitor 是否监控， true: 不可删除水印; false: 可删水印。
   };
+
 
   /*加载水印*/
   var loadMark = function(settings) {
@@ -55,21 +57,11 @@
 
     /*如果元素存在则移除*/
     var watermark_element = document.getElementById(defaultSettings.watermark_id);
-    if (watermark_element) {
-      var _parentElement = watermark_element.parentNode;
-      if(_parentElement){
-        _parentElement.removeChild(watermark_element);
-      }
-    }
+    watermark_element && watermark_element.parentNode && watermark_element.parentNode.removeChild(watermark_element);
 
     /*如果设置水印挂载的父元素的id*/
     var watermark_parent_element = document.getElementById(defaultSettings.watermark_parent_node);
-    var watermark_hook_element;
-    if (watermark_parent_element) {
-      watermark_hook_element = watermark_parent_element;
-    } else {
-      watermark_hook_element = document.body;
-    }
+    var watermark_hook_element = watermark_parent_element ? watermark_parent_element : document.body;
 
     /*获取页面宽度*/
     // var page_width = Math.max(watermark_hook_element.scrollWidth,watermark_hook_element.clientWidth) - defaultSettings.watermark_width/2;
@@ -104,12 +96,9 @@
 
     if(!otdiv){
       otdiv =document.createElement('div');
-
       /*创建shadow dom*/
       otdiv.id = defaultSettings.watermark_id;
-      otdiv.setAttribute('style','pointerEvents: none !important; display: block !important');
-      otdiv.style.pointerEvents = "none";
-
+      otdiv.setAttribute('style','pointer-events: none !important; display: block !important');
       /*判断浏览器是否支持attachShadow方法*/
       if(typeof otdiv.attachShadow === 'function'){
         /* createShadowRoot Deprecated. Not for use in new websites. Use attachShadow*/
@@ -117,7 +106,6 @@
       }else{
         shadowRoot = otdiv;
       }
-
       /*将shadow dom随机插入body内的任意位置*/
       var nodeList = watermark_hook_element.children;
       var index = Math.floor(Math.random()*(nodeList.length-1 ));
@@ -126,7 +114,6 @@
       }else{
         watermark_hook_element.appendChild(otdiv);
       }
-
     }else if (otdiv.shadowRoot){
       shadowRoot = otdiv.shadowRoot;
     }
@@ -195,6 +182,13 @@
         shadowRoot.appendChild(mask_div);
       }
     }
+
+    // monitor 是否监控， true: 不可删除水印; false: 可删水印。
+    const minotor = settings.monitor === undefined ? defaultSettings.monitor : settings.monitor;
+    if (minotor) {
+      watermarkDom.observe(watermark_hook_element, option);
+      watermarkDom.observe(document.getElementById('wm_div_id').shadowRoot, option);
+    }
   };
 
   /*移除水印*/
@@ -217,9 +211,12 @@
     _parentElement.removeChild(watermark_element);
   };
 
+  var globalSetting;
   /*初始化水印，添加load和resize事件*/
   watermark.init = function(settings) {
-    window.addEventListener('load', function () {
+    globalSetting = settings;
+    loadMark(settings);
+    window.addEventListener('onload', function () {
       loadMark(settings);
     });
     window.addEventListener('resize', function () {
@@ -229,12 +226,27 @@
 
   /*手动加载水印*/
   watermark.load = function(settings){
+    globalSetting = settings;
     loadMark(settings);
   };
 
   /*手动移除水印*/
   watermark.remove = function(){
     removeMark();
+  };
+
+  //监听dom是否被移除或者改变属性的回调函数
+  var callback = function (records){
+    if ((globalSetting && records.length === 1) || records.length === 1 && records[0].removedNodes.length >= 1) {
+      loadMark(globalSetting);
+    }
+  };
+  const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+  var watermarkDom = new MutationObserver(callback);
+  var option = {
+    'childList': true,
+    'attributes': true,
+    'subtree': true,
   };
 
   return watermark;
