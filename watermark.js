@@ -187,7 +187,7 @@
     const minotor = settings.monitor === undefined ? defaultSettings.monitor : settings.monitor;
     if (minotor) {
       watermarkDom.observe(watermark_hook_element, option);
-      watermarkDom.observe(document.getElementById('wm_div_id').shadowRoot, option);
+      watermarkDom.observe(document.getElementById(defaultSettings.watermark_id).shadowRoot, option);
     }
   };
 
