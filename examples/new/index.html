@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo">
+  <ol contenteditable style="border: 1px solid red">
+    <li>111111</li>
+  </ol>
+</div>
+</body>
+<script>
+  const MutationObserver =
+    window.MutationObserver ||
+    window.WebKitMutationObserver ||
+    window.MozMutationObserver
+  const list = document.querySelector('ol')
+  const Observer = new MutationObserver((mutations, instance) => {
+    mutations.forEach(mutation => {
+      if (mutation.type === 'childList') {
+        const list_values = [].slice
+          .call(list.children)
+          .map(node => node.innerHTML)
+          .filter(s => s !== '<br>')
+        console.log(list_values)
+      }
+    })
+  })
+  Observer.observe(list, {
+    childList: true
+  })
+</script>
+</html>
