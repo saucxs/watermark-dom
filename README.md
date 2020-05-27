@@ -289,7 +289,7 @@ Chrome,FireFox,Safari,IE9及以上浏览器
 
 
 ## 9、欢迎关注
-show me code：https://github.com/saucxs
+欢迎关注Github：https://github.com/saucxs
 
 后续会出更多知识体系构建，技术分享，项目实战，实验室等，欢迎关注本公众号:**[松宝写代码]**
 
@@ -299,4 +299,5 @@ show me code：https://github.com/saucxs
 songEagle开发知识体系构建，技术分享，项目实战，实验室，带你一起学习新技术，总结学习过程，让你进阶到高级资深工程师，学习项目管理，思考职业发展，生活感悟，充实中成长起来。问题或建议，请公众号留言。
 
 >微信群：**【写代码】研发进阶群**
-一个成长交流的产研群，帮忙拉产研的同学们进群，聚聚人气😘😘。https://github.com/saucxs/full_stack_knowledge_list，每一个开发人员都应该形成自己的知识体系，做到提纲挈领🧐🧐🧐
+一个成长交流的产研群，帮忙拉产研的同学们进群，聚聚人气😘😘。
+每一个开发同学都应该形成自己的[知识体系](https://github.com/saucxs/full_stack_knowledge_list)，做到提纲挈领🧐🧐🧐
