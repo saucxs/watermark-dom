@@ -209,10 +209,10 @@
     var watermark_element = document.getElementById(defaultSettings.watermark_id);
     var _parentElement = watermark_element.parentNode;
     _parentElement.removeChild(watermark_element);
-    // :bug: #48 #42
-    // minotor这个配置有写冗余
-    // 如果用MutationObserver来监听dom变化防止删除水印
-    // renove方法里用MutationObserver的方法来 disconnect 解除监听即可
+    // :ambulance: remove()
+    // minotor 这个配置有些冗余
+    // 如果用 MutationObserver 来监听dom变化防止删除水印
+    // remove() 方法里用 MutationObserver 的 disconnect() 解除监听即可
     watermarkDom.disconnect();
   };
 
