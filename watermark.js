@@ -239,6 +239,16 @@
   var callback = function (records){
     if ((globalSetting && records.length === 1) || records.length === 1 && records[0].removedNodes.length >= 1) {
       loadMark(globalSetting);
+      return;
+    }
+
+    var watermark_parent_element = document.getElementById(defaultSettings.watermark_parent_node);
+    if (watermark_parent_element) {
+        var newWidth = getComputedStyle(watermark_parent_element).getPropertyValue('width');
+        if (newWidth !== recordOldValue.width) {
+            recordOldValue.width = newWidth;
+            loadMark(globalSetting);
+        }
     }
   };
   const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
@@ -247,7 +257,12 @@
     'childList': true,
     'attributes': true,
     'subtree': true,
+    'attributeFilter': ['style'],
+    'attributeOldValue': true
   };
+  var recordOldValue = {
+    width: 0
+  }
 
   return watermark;
 }));
