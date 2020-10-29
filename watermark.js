@@ -184,8 +184,8 @@
     }
 
     // monitor 是否监控， true: 不可删除水印; false: 可删水印。
-    const minotor = settings.monitor === undefined ? defaultSettings.monitor : settings.monitor;
-    if (minotor) {
+    const monitor = settings.monitor === undefined ? defaultSettings.monitor : settings.monitor;
+    if (monitor) {
       watermarkDom.observe(watermark_hook_element, option);
       watermarkDom.observe(document.getElementById(defaultSettings.watermark_id).shadowRoot, option);
     }
