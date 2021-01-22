@@ -18,6 +18,8 @@
   /*Just return a value to define the module export.*/
   var watermark = {};
 
+  var forceRemove = false;
+
   var defaultSettings={
     watermark_id: 'wm_div_id',          //水印总体的id
     watermark_prefix: 'mask_div_id',    //小水印的id前缀
@@ -41,6 +43,26 @@
     monitor:true,                   //monitor 是否监控， true: 不可删除水印; false: 可删水印。
   };
 
+  const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+
+  //监听dom是否被移除或者改变属性的回调函数
+  var domChangeCallback = function (records){
+    if(forceRemove) {
+      forceRemove = false;
+      return;
+    }
+    if ((globalSetting && records.length === 1) || records.length === 1 && records[0].removedNodes.length >= 1) {
+      loadMark(globalSetting);
+    }
+  };
+
+  var hasObserver = MutationObserver !== undefined;
+  var watermarkDom = hasObserver ? new MutationObserver(domChangeCallback) : null;
+  var option = {
+    'childList': true,
+    'attributes': true,
+    'subtree': true,
+  };
 
   /*加载水印*/
   var loadMark = function(settings) {
@@ -92,7 +114,7 @@
 
     /*创建水印外壳div*/
     var otdiv = document.getElementById(defaultSettings.watermark_id);
-    var shadowRoot=null;
+    var shadowRoot = null;
 
     if(!otdiv){
       otdiv =document.createElement('div');
@@ -185,7 +207,7 @@
 
     // monitor 是否监控， true: 不可删除水印; false: 可删水印。
     const minotor = settings.monitor === undefined ? defaultSettings.monitor : settings.monitor;
-    if (minotor) {
+    if (minotor && hasObserver) {
       watermarkDom.observe(watermark_hook_element, option);
       watermarkDom.observe(document.getElementById(defaultSettings.watermark_id).shadowRoot, option);
     }
@@ -237,8 +259,10 @@
 
   /*手动移除水印*/
   watermark.remove = function(){
+    forceRemove = true;
     removeMark();
   };
+
 
   //监听dom是否被移除或者改变属性的回调函数
   var callback = function (records){
