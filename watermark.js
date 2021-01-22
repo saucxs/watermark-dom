@@ -231,6 +231,11 @@
     var watermark_element = document.getElementById(defaultSettings.watermark_id);
     var _parentElement = watermark_element.parentNode;
     _parentElement.removeChild(watermark_element);
+    // :ambulance: remove()
+    // minotor 这个配置有些冗余
+    // 如果用 MutationObserver 来监听dom变化防止删除水印
+    // remove() 方法里用 MutationObserver 的 disconnect() 解除监听即可
+    watermarkDom.disconnect();
   };
 
   var globalSetting;
@@ -257,5 +262,40 @@
     forceRemove = true;
     removeMark();
   };
+
+
+  //监听dom是否被移除或者改变属性的回调函数
+  var callback = function (records){
+    if ((globalSetting && records.length === 1) || records.length === 1 && records[0].removedNodes.length >= 1) {
+      loadMark(globalSetting);
+      return;
+    }
+
+    // 监听父节点的尺寸是否发生了变化, 如果发生改变, 则进行重新绘制
+    var watermark_parent_element = document.getElementById(defaultSettings.watermark_parent_node);
+    if (watermark_parent_element) {
+      var newWidth = getComputedStyle(watermark_parent_element).getPropertyValue('width');
+      var newHeight = getComputedStyle(watermark_parent_element).getPropertyValue('height');
+      if (newWidth !== recordOldValue.width || newHeight !== recordOldValue.height) {
+        recordOldValue.width = newWidth;
+        recordOldValue.height = newHeight;
+        loadMark(globalSetting);
+      }
+    }
+  };
+  const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+  var watermarkDom = new MutationObserver(callback);
+  var option = {
+    'childList': true,
+    'attributes': true,
+    'subtree': true,
+    'attributeFilter': ['style'],
+    'attributeOldValue': true
+  };
+  var recordOldValue = {
+    width: 0,
+    height: 0
+  }
+
   return watermark;
 }));
