@@ -90,7 +90,7 @@
     var page_width = Math.max(watermark_hook_element.scrollWidth,watermark_hook_element.clientWidth);
     /*获取页面最大长度*/
     // var page_height = Math.max(watermark_hook_element.scrollHeight,watermark_hook_element.clientHeight,document.documentElement.clientHeight)-defaultSettings.watermark_height/2;
-    var page_height = Math.max(watermark_hook_element.scrollHeight,watermark_hook_element.clientHeight);
+    var page_height = watermark_hook_element.clientHeight;
 
     var setting = arguments[0]||{};
     var parentEle = watermark_hook_element;
@@ -185,7 +185,7 @@
         mask_div.style.OTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
         mask_div.style.transform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
         mask_div.style.visibility = "";
-        mask_div.style.position = "absolute";
+        mask_div.style.position = "fixed";
         /*选不中*/
         mask_div.style.left = x + 'px';
         mask_div.style.top = y + 'px';
@@ -208,7 +208,7 @@
     // monitor 是否监控， true: 不可删除水印; false: 可删水印。
     const minotor = settings.monitor === undefined ? defaultSettings.monitor : settings.monitor;
     if (minotor && hasObserver) {
-      watermarkDom.observe(watermark_hook_element, option);
+      watermarkDom.observe(watermark_hook_element, {...option, subtree: false}); // subtree: false 为节省性能
       watermarkDom.observe(document.getElementById(defaultSettings.watermark_id).shadowRoot, option);
     }
   };
@@ -262,40 +262,5 @@
     forceRemove = true;
     removeMark();
   };
-
-
-  //监听dom是否被移除或者改变属性的回调函数
-  var callback = function (records){
-    if ((globalSetting && records.length === 1) || records.length === 1 && records[0].removedNodes.length >= 1) {
-      loadMark(globalSetting);
-      return;
-    }
-
-    // 监听父节点的尺寸是否发生了变化, 如果发生改变, 则进行重新绘制
-    var watermark_parent_element = document.getElementById(defaultSettings.watermark_parent_node);
-    if (watermark_parent_element) {
-      var newWidth = getComputedStyle(watermark_parent_element).getPropertyValue('width');
-      var newHeight = getComputedStyle(watermark_parent_element).getPropertyValue('height');
-      if (newWidth !== recordOldValue.width || newHeight !== recordOldValue.height) {
-        recordOldValue.width = newWidth;
-        recordOldValue.height = newHeight;
-        loadMark(globalSetting);
-      }
-    }
-  };
-  const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-  var watermarkDom = new MutationObserver(callback);
-  var option = {
-    'childList': true,
-    'attributes': true,
-    'subtree': true,
-    'attributeFilter': ['style'],
-    'attributeOldValue': true
-  };
-  var recordOldValue = {
-    width: 0,
-    height: 0
-  }
-
   return watermark;
 }));
