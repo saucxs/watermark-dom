@@ -219,7 +219,7 @@
     if(arguments.length===1&&typeof arguments[0] ==="object" )
     {
       var src=arguments[0]||{};
-      for(key in src)
+      for(var key in src)
       {
         if(src[key]&&defaultSettings[key]&&src[key]===defaultSettings[key])continue;
         /*veronic: resolution of watermark_angle=0 not in force*/
@@ -283,7 +283,7 @@
       }
     }
   };
-  const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+  // const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
   var watermarkDom = new MutationObserver(callback);
   var option = {
     'childList': true,
