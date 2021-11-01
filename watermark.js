@@ -174,8 +174,10 @@
           x = defaultSettings.watermark_x + (page_width - allWatermarkWidth) / 2 + (defaultSettings.watermark_width + defaultSettings.watermark_x_space) * j;
         }
         var mask_div = document.createElement('div');
-        var oText=document.createTextNode(defaultSettings.watermark_txt);
-        mask_div.appendChild(oText);
+        var innerDiv = document.createElement('div')
+        innerDiv.innerHTML = defaultSettings.watermark_txt
+        // var oText = document.createTextNode(defaultSettings.watermark_txt);
+        mask_div.appendChild(innerDiv);
         /*设置水印相关属性start*/
         mask_div.id = defaultSettings.watermark_prefix + i + j;
         /*设置水印div倾斜显示*/
