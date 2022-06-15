@@ -163,7 +163,7 @@
     var y;
     for (var i = 0; i < defaultSettings.watermark_rows; i++) {
       if(watermark_parent_element){
-        y = page_offsetTop + defaultSettings.watermark_y + (page_height - allWatermarkHeight) / 2 + (defaultSettings.watermark_y_space + defaultSettings.watermark_height) * i;
+        y = page_offsetTop + defaultSettings.watermark_y + (defaultSettings.watermark_y_space + defaultSettings.watermark_height) * i;
       }else{
         y = defaultSettings.watermark_y + (page_height - allWatermarkHeight) / 2 + (defaultSettings.watermark_y_space + defaultSettings.watermark_height) * i;
       }
