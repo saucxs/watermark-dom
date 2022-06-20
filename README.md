@@ -138,6 +138,9 @@ var watermarkDom = require("watermark-dom")
    <script>watermark.init({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
 ```
 注意：(2)我们提供了remove方法，用来移除水印
+
+monitor参数为true: 不可删除水印; false: 可删水印
+
 ```
    <script>watermark.remove({ watermark_txt: "测试水印，1021002301，测试水印，100101010111101" })</script>
 ```
