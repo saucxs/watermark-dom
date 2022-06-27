@@ -290,7 +290,8 @@
     'attributes': true,
     'subtree': true,
     'attributeFilter': ['style'],
-    'attributeOldValue': true
+    'attributeOldValue': true,
+    'characterData':true
   };
   var recordOldValue = {
     width: 0,
