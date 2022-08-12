@@ -43,7 +43,7 @@
     monitor:true,                   //monitor 是否监控， true: 不可删除水印; false: 可删水印。
   };
 
-  const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+  var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
 
   //监听dom是否被移除或者改变属性的回调函数
   var domChangeCallback = function (records){
@@ -206,7 +206,7 @@
     }
 
     // monitor 是否监控， true: 不可删除水印; false: 可删水印。
-    const minotor = settings.monitor === undefined ? defaultSettings.monitor : settings.monitor;
+    var minotor = settings.monitor === undefined ? defaultSettings.monitor : settings.monitor;
     if (minotor && hasObserver) {
       watermarkDom.observe(watermark_hook_element, option);
       watermarkDom.observe(document.getElementById(defaultSettings.watermark_id).shadowRoot, option);
@@ -283,7 +283,7 @@
       }
     }
   };
-  const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+
   var watermarkDom = new MutationObserver(callback);
   var option = {
     'childList': true,
