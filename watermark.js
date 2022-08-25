@@ -174,8 +174,25 @@
           x = defaultSettings.watermark_x + (page_width - allWatermarkWidth) / 2 + (defaultSettings.watermark_width + defaultSettings.watermark_x_space) * j;
         }
         var mask_div = document.createElement('div');
-        var oText=document.createTextNode(defaultSettings.watermark_txt);
-        mask_div.appendChild(oText);
+
+        var watermark_txt = defaultSettings.watermark_txt;
+
+        if (typeof watermark_txt === 'string') {
+          var oText=document.createTextNode(defaultSettings.watermark_txt);
+          mask_div.appendChild(oText);
+        }
+
+        if (Array.isArray(watermark_txt)) {
+          watermark_txt.forEach(txt => {
+            if (txt) {
+              const oText = document.createElement('div')
+              oText.innerText = item
+              mask_div.appendChild(oText)
+            }
+          })
+        }
+
+
         /*设置水印相关属性start*/
         mask_div.id = defaultSettings.watermark_prefix + i + j;
         /*设置水印div倾斜显示*/
