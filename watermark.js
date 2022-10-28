@@ -120,7 +120,10 @@
       otdiv =document.createElement('div');
       /*创建shadow dom*/
       otdiv.id = defaultSettings.watermark_id;
-      otdiv.setAttribute('style','pointer-events: none !important; display: block !important');
+      otdiv.setAttribute(
+        'style',
+        'pointer-events: none !important; display: block !important; position: static !important; opacity: 1 !important; visibility: visible !important'
+      );
       /*判断浏览器是否支持attachShadow方法*/
       if(typeof otdiv.attachShadow === 'function'){
         /* createShadowRoot Deprecated. Not for use in new websites. Use attachShadow*/
